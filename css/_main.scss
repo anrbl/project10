@@ -1,0 +1,341 @@
+.main_visual {
+    position: relative;
+
+    .main_slide {
+        .itm {
+            position: relative;
+            height: 100vh;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0 0 0 0;
+                background: linear-gradient(to top, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.7) 100%);
+            }
+        }
+
+        .itm01 {
+            background: url(../images/mainVisual01.jpg) no-repeat center center/cover;
+        }
+
+        .itm02 {
+            background: url(../images/mainVisual02.jpg) no-repeat center center/cover;
+        }
+    }
+
+    .ms_slogan {
+        @include pcenter();
+        top: 30%;
+        text-align: center;
+
+        p {
+            font-size: 30px;
+            line-height: 34px;
+            font-weight: 300;
+            margin: 0 0 8px 0;
+
+            strong {
+                color: $c-main;
+            }
+        }
+
+        h3 {
+            font-size: 68px;
+            line-height: 72px;
+            font-weight: 700;
+            margin: 0 0 32px 0;
+            color: $c-main;
+        }
+
+        span {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+    }
+
+    .scroll {
+        position: absolute;
+        top: calc(50% + 50px);
+        right: 96px;
+        transform: translate(0, -50%);
+
+        font-size: 14px;
+        font-weight: 500;
+        color: $c-2;
+        text-transform: uppercase;
+        writing-mode: vertical-lr;
+    }
+}
+
+.main_premium {
+    position: relative;
+    background: $c-sub;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 1200px;
+        height: 100%;
+        background: url(../images/BG-premium.png) no-repeat center center/cover;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        color: $c-point;
+        margin: 0 auto 68px auto;
+
+        h2 {
+            font-size: 64px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 300;
+            margin: 0 0 8px 0;
+        }
+    }
+
+    .premium_line {
+        .benefit {
+            position: relative;
+            text-align: center;
+
+            margin: 0 15px;
+            padding: 72px 15px 16px 15px;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 500;
+                color: $c-point;
+                margin: 0 0 16px 0;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                color: $c-9;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 50px;
+                height: 50px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 15px;
+                left: -16px;
+                height: 80px;
+                width: 1px;
+                background: $c-line;
+                opacity: 30%;
+            }
+        }
+
+        .bf01::before {
+            background: url(../images/premium-icon.png) no-repeat 0% center;
+        }
+
+        .bf02::before {
+            background: url(../images/premium-icon.png) no-repeat 14.5% center;
+        }
+
+        .bf03::before {
+            background: url(../images/premium-icon.png) no-repeat 28.7% center;
+        }
+
+        .bf04::before {
+            background: url(../images/premium-icon.png) no-repeat 43% center;
+        }
+
+        .bf05::before {
+            background: url(../images/premium-icon.png) no-repeat 57% center;
+        }
+
+        .bf06::before {
+            background: url(../images/premium-icon.png) no-repeat 71.5% center;
+        }
+
+        .bf07::before {
+            background: url(../images/premium-icon.png) no-repeat 86% center;
+        }
+
+        .bf08::before {
+            background: url(../images/premium-icon.png) no-repeat 100% center;
+        }
+    }
+
+    .premium_arrows {
+        @include pcenter();
+        user-select: none;
+        cursor: pointer;
+
+        i {
+            background: $c-wb;
+            color: $c-sub;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .left {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50px);
+            padding: 13px 15px 13px 13px;
+            margin: 0 0 0 -630px;
+        }
+
+        .right {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50px);
+            padding: 13px 13px 13px 15px;
+            margin: 0 0 0 630px;
+        }
+    }
+}
+
+.main_unit {
+    position: relative;
+    height: 100vh;
+    background: url(../images/BG-mainproduct.jpg) no-repeat center center/cover;
+
+    .content {
+        position: absolute;
+        top: calc(50% - 40px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        justify-content: space-between;
+        gap: $gap;
+
+        .left {
+            width: 400px;
+
+            .tit {
+                margin: 0 0 56px 0;
+
+                h3 {
+                    font-size: 64px;
+                    font-weight: 700;
+                    color: $c-main;
+                    text-transform: uppercase;
+                }
+
+                span {
+                    font-size: 12px;
+                    font-weight: 500;
+                    letter-spacing: 1.3px;
+                }
+            }
+
+            p {
+                font-size: 15px;
+                line-height: 30px;
+                margin: 0 0 48px 0;
+                color: $c-4;
+            }
+
+            a {
+                display: inline-block;
+                padding: 20px 112px 18px 46px;
+                background: $c-main;
+                color: $c-w;
+
+                &>span {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: calc(50% - 1px);
+                        right: -61px;
+                        transform: translate(0, -50%) rotate(-45deg);
+                        width: 1px;
+                        height: 10px;
+                        background: $c-line;
+                        transition: 0.5s;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: calc(50% + 3px);
+                        right: -65px;
+                        transform: translate(0, -50%);
+                        display: block;
+                        width: 50px;
+                        height: 1px;
+                        background: $c-line;
+                        transition: 0.5s;
+                    }
+                }
+
+                &:hover {
+                    &>span {
+                        &::before {
+                            transform: translate(10px, -50%) rotate(-45deg);
+                        }
+
+                        &::after {
+                            transform: translate(10px, -50%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 1000px;
+        }
+
+        .product {
+            padding: 15px 0;
+
+            figure {
+                transform: translate(0, 0);
+                transition: 0.5s;
+            }
+
+            &:hover {
+                figure {
+                    transform: translate(0, -15px);
+                }
+            }
+        }
+
+        .unit_arrows {
+            user-select: none;
+            cursor: pointer;
+
+            i {
+                padding: 8px 10px;
+                background: $c-w;
+                color: $c-main;
+                border: 1px solid $c-line;
+                transition: 0.5s;
+
+                &:hover {
+                    background: $c-main;
+                    color: $c-w;
+                }
+            }
+        }
+    }
+}
