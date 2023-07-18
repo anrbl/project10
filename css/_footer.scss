@@ -1,5 +1,7 @@
 .footer {
     padding: 72px 0;
+    background: $c-wb;
+    border-top: 1px solid $c-line;
 
     .inner {
         text-align: center;
@@ -95,4 +97,27 @@
     }
 
 
+}
+
+.to_top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+
+    user-select: none;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        background: $c-sub;
+        color: $c-w;
+
+        font-size: 20px;
+        font-weight: 700;
+    }
 }

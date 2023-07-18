@@ -20,7 +20,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 50px;
+        padding: 0 40px;
         height: 90px;
         transition: 0.5s;
 
@@ -56,40 +56,66 @@
             gap: 70px;
 
             &>li {
-                line-height: 90px;
-                transition: 0.5s;
 
                 &>a {
+                    position: relative;
                     display: block;
                     font-size: 18px;
                     font-weight: 500;
+                    line-height: 90px;
+                    transition: 0.5s;
+
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        width: 0;
+                        height: 2px;
+                        background: $c-main;
+                        transition: width 0.5s;
+                    }
+
+
+                    &:hover {
+                        color: $c-main;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
                 }
 
-                &:hover {
-                    color: $c-main;
-                }
             }
         }
     }
 
     .user_area {
         display: flex;
+        align-items: center;
         gap: 30px;
 
         .tel {
             position: relative;
-            font-size: 30px;
+            font-size: 22px;
             font-weight: 700;
+            // padding: 10px 20px 8px 45px;
+            // border-radius: 40px;
+            // background: $c-4;
+            color: $c-main;
 
             &::before {
                 content: "\f5c1";
                 font-family: bootstrap-icons;
                 position: absolute;
-                top: calc(50% + 2px);
-                left: -30px;
+                top: calc(50% + 1px);
+                left: -20px;
                 transform: translate(0, -50%);
-                font-size: 22px;
-                font-weight: 500;
+                font-size: 15px;
+                font-weight: 300;
             }
         }
 
@@ -103,7 +129,7 @@
         content: "";
         position: absolute;
         top: 120px;
-        right: 107px;
+        right: 87px;
         width: 1px;
         height: 50px;
         background: $c-9;
@@ -113,7 +139,7 @@
         content: "grand open";
         position: absolute;
         top: 150px;
-        right: 50px;
+        right: 30px;
 
         width: 110px;
         height: 110px;
@@ -143,5 +169,22 @@
             }
         }
 
+    }
+}
+
+
+@media (max-width:768px) {
+    .header {
+        .ht {
+            display: none;
+        }
+
+        .gnb {
+            display: none;
+        }
+
+        .user_area {
+            display: none;
+        }
     }
 }
