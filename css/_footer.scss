@@ -99,6 +99,82 @@
 
 }
 
+@media (max-width:768px) {
+    .footer {
+        padding: 56px 0;
+
+        .ft {
+            position: relative;
+
+            h2 {
+                margin: 0 0 32px 0;
+
+                img {
+                    width: 72px;
+                }
+            }
+
+            .foot_cooperation {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+
+                margin: 0 0 80px 0;
+
+                .img_box {
+                    width: 100px;
+                }
+
+                li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    &:not(:first-child)::before {
+                        display: none
+                    }
+                }
+            }
+
+            &::after {
+                bottom: -40px;
+            }
+        }
+
+        .fb {
+            .foot_agency {
+                display: block;
+                margin: 0 0 24px 0;
+                text-align: left;
+
+                strong {
+                    font-weight: 700;
+                    color: $c-main;
+                }
+
+                li {
+                    position: relative;
+                    margin: 16px 0;
+
+                    &:not(:first-child)::before {
+                        display: none;
+                    }
+                }
+            }
+
+            .copy {
+                font-size: 12px;
+
+                text-align: left;
+            }
+        }
+    }
+}
+
 .to_top {
     position: fixed;
     bottom: 0;
@@ -107,6 +183,8 @@
 
     user-select: none;
     cursor: pointer;
+
+    display: none;
 
     span {
         display: block;
@@ -119,5 +197,22 @@
 
         font-size: 20px;
         font-weight: 700;
+    }
+}
+
+@media (max-width:768px) {
+    .to_top {
+        span {
+            display: block;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background: $c-sub;
+            color: $c-w;
+
+            font-size: 12px;
+            font-weight: 500;
+        }
     }
 }

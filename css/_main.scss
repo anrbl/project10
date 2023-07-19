@@ -1,3 +1,4 @@
+//슬라이드(섹션1)
 .main_visual {
     position: relative;
     height: 100vh;
@@ -78,6 +79,51 @@
     }
 }
 
+@media (max-width:768px) {
+    .main_visual {
+        height: 450px;
+
+        .main_slide {
+            .itm {
+                background-position: center top;
+                min-height: 500px;
+                background-size: auto 120%;
+            }
+        }
+
+        .ms_slogan {
+            @include pcenter();
+            top: 56px;
+            transform: translate(-50%, 0);
+            width: calc(100% - 100px);
+            text-align: center;
+
+            p {
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 400;
+            }
+
+            h3 {
+                font-size: 48px;
+                line-height: 48px;
+                font-weight: 700;
+                margin: 0 0 16px 0;
+            }
+
+            span {
+                font-size: 10px;
+                font-weight: 500;
+            }
+        }
+
+        .scroll {
+            display: none;
+        }
+    }
+}
+
+//슬라이드 프리미엄 혜택 베네핏 (섹션2)
 .main_premium {
     position: relative;
 
@@ -219,12 +265,53 @@
 
 @media (max-width:768px) {
     .main_premium {
+
+        .title {
+            display: block;
+            text-align: center;
+            margin: 0 auto 24px auto;
+
+
+            p {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        .benefit {
+            position: relative;
+            text-align: center;
+
+            margin: 0 5px;
+            padding: 112px 0px 56px 0px;
+        }
+
         .premium_arrows {
-            display: none;
+            width: 100%;
+
+            .left {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translate(0, 50%);
+                padding: 13px 15px 13px 13px;
+                margin: 0 0 0 0;
+            }
+
+            .right {
+                position: absolute;
+                top: 50%;
+                left: auto;
+                right: 10px;
+                transform: translate(0, 50%);
+                padding: 13px 13px 13px 15px;
+                margin: 0 0 0 0;
+            }
         }
     }
 }
 
+//슬라이드 유닛 플랜 (섹션3)
 .main_unit {
     position: relative;
     height: 100vh;
@@ -374,14 +461,22 @@
         }
 
         .unit_arrows {
+            display: flex;
+            justify-content: flex-end;
+            gap: 6px;
+            margin: 0 20px 0 0;
             user-select: none;
             cursor: pointer;
 
             i {
-                padding: 8px 10px;
+                display: block;
+                width: 48px;
+                height: 48px;
+                text-align: center;
+                line-height: 48px;
                 background: $c-w;
                 color: $c-main;
-                border: 1px solid $c-line;
+                border: 1px solid $c-main;
                 transition: 0.5s;
 
                 &:hover {
@@ -410,18 +505,118 @@
 
             .left {
                 width: 100%;
+                text-align: center;
+
+                .tit {
+                    margin: 0 0 32px 0;
+
+                    h3 {
+                        font-size: 40px;
+                        font-weight: 600;
+                    }
+
+                    span {
+                        font-size: 10px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                    }
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin: 0 0 32px 0;
+                    color: $c-4;
+
+                }
+
+                a {
+                    display: inline-block;
+                    padding: 12px 40px 11px 40px;
+                    background: $c-main;
+                    color: $c-w;
+
+                    &>span {
+                        &::before {
+                            display: none;
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
             }
 
             .right {
+                position: relative;
                 width: 100%;
                 overflow: hidden;
+            }
+
+            .product {
+                padding: 0 0;
+                margin: 0 5px;
+
+                figure {
+                    .img_box {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .desc {
+                        right: 0;
+                        padding: 0 0;
+                        height: 100px;
+
+                        justify-content: flex-start;
+                        padding: 0 30px;
+                        border-top: 1px solid $c-main;
+                    }
+                }
+
+                &:hover {
+                    figure {
+                        transform: translate(0, 0);
+                    }
+                }
+            }
+
+            .unit_arrows {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: block;
+                margin: 0 5px 0 0;
+
+                i {
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                    background: $c-w;
+                    color: $c-main;
+                    border: 1px solid $c-main;
+                    transition: 0.5s;
+
+                    &:hover {
+                        background: $c-w;
+                        color: $c-main;
+                    }
+                }
+
+                .left {
+                    border-bottom: 0;
+                    border-bottom: 0;
+                }
             }
         }
     }
 }
 
 .main_news {
-
     .title {
         display: flex;
         justify-content: space-between;
@@ -435,15 +630,12 @@
 
             span {
                 position: relative;
-                margin: 0 15px 0 0;
 
                 &::after {
                     content: "\F4FE";
                     font-family: bootstrap-icons;
-                    position: absolute;
-                    top: 50%;
-                    right: -15px;
-                    transform: translate(0, -50%);
+                    margin: 0 0 0 3px;
+                    vertical-align: -2px;
                     color: $c-main;
                 }
             }
@@ -520,11 +712,34 @@
 
 @media (max-width:768px) {
     .main_news {
+        .title {
+            padding: 0 20px;
+        }
+
         .content {
+            padding: 0 20px;
+
             .news_list {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
-                gap: 15px;
+                gap: 20px;
+
+                a {
+                    height: 100%;
+                    padding: 35px 24px;
+
+                    &:hover {
+                        transform: translate(0, 0);
+                    }
+                }
+
+                h3 {
+                    margin: 0 0 16px 0;
+                }
+
+                p {
+                    margin: 0 0 24px 0;
+                }
             }
         }
     }
