@@ -1,8 +1,11 @@
 # project10
 
 
-##0717메모
-- 반응형하기
-- 메인비쥬얼 움직이는 효과 넣기
-- 다단메뉴 하기
-- 자잘한거 넣기
+ <img src="https://img.shields.io/badge/11주차-2F2625?style=for-the-badge&logo=codesandbox&logoColor=white"/> <img src="https://img.shields.io/badge/반응형-808000?style=for-the-badge&logo=awesomelists&logoColor=white"/>  <img src="https://img.shields.io/badge/Scss 작업-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
+<br/>
+📅 2023.07.17 ~ 2023.07.20
+ - 원본 사이트: http://hillstate-mojong-blancluce.co.kr (힐스테이트 모종 블랑루체)
+ - 사이트 카피(일부 추가 및 리디자인) / 반응형 작업
+<br/>
+🔗 https://anrbl.github.io/project10
+
