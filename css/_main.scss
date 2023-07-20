@@ -76,6 +76,72 @@
         text-transform: uppercase;
         letter-spacing: 5px;
         text-shadow: 0 0 15px rgba($color: $c-b, $alpha: 1);
+
+        user-select: none;
+    }
+
+    .arrows {
+        cursor: pointer;
+
+        .left {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 0 0 -800px;
+
+            display: block;
+            padding: 45px 0 45px 20px;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 64px;
+                height: 1px;
+                background: $c-w;
+                transform: rotate(45deg) translate(0, 32px);
+                border-radius: 50px;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 64px;
+                height: 1px;
+                background: $c-w;
+                transform: rotate(-45deg)translate(0, -33px);
+                border-radius: 50px;
+            }
+        }
+
+        .right {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 0 0 800px;
+            padding: 45px 20px 45px 0;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 64px;
+                height: 1px;
+                background: $c-w;
+                transform: rotate(-45deg) translate(0, 33px);
+                border-radius: 50px;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 64px;
+                height: 1px;
+                background: $c-w;
+                transform: rotate(45deg)translate(0, -33px);
+                border-radius: 50px;
+            }
+        }
     }
 }
 
@@ -118,6 +184,10 @@
         }
 
         .scroll {
+            display: none;
+        }
+
+        .arrows {
             display: none;
         }
     }
@@ -230,6 +300,38 @@
         }
     }
 
+    .slick-dots {
+        text-align: center;
+        margin: 20px 0 0 0;
+
+        &>li {
+            display: inline-block;
+            margin: 0 2px;
+
+
+            button {
+                outline: none;
+                border: none;
+                background: $c-line;
+                font-size: 12px;
+                font-family: "Pretendard Variable";
+                padding: 2px;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                color: $c-4;
+            }
+
+            &.slick-active {
+                button {
+                    background: $c-point;
+                }
+            }
+        }
+
+    }
+
+
     .premium_arrows {
         @include pcenter();
         user-select: none;
@@ -247,7 +349,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, 50px);
+            transform: translate(-50%, 15px);
             padding: 13px 15px 13px 13px;
             margin: 0 0 0 -630px;
         }
@@ -256,7 +358,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, 50px);
+            transform: translate(-50%, 15px);
             padding: 13px 13px 13px 15px;
             margin: 0 0 0 630px;
         }
@@ -293,7 +395,7 @@
                 position: absolute;
                 top: 50%;
                 left: 10px;
-                transform: translate(0, 50%);
+                transform: translate(0, 0);
                 padding: 13px 15px 13px 13px;
                 margin: 0 0 0 0;
             }
@@ -303,7 +405,7 @@
                 top: 50%;
                 left: auto;
                 right: 10px;
-                transform: translate(0, 50%);
+                transform: translate(0, 0);
                 padding: 13px 13px 13px 15px;
                 margin: 0 0 0 0;
             }
@@ -415,13 +517,10 @@
                 transform: translate(0, 0);
                 transition: 0.5s;
 
+                margin: 0 15px;
+
                 .desc {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 24px;
-                    height: 90px;
-                    padding: 15px 0;
+                    padding: 30px 0;
                     background: $c-main;
 
                     display: flex;
@@ -458,13 +557,19 @@
                     transform: translate(0, -15px);
                 }
             }
+
+            &.on {
+                figure {
+                    transform: translate(0, -15px);
+                }
+            }
         }
 
         .unit_arrows {
             display: flex;
             justify-content: flex-end;
             gap: 6px;
-            margin: 0 20px 0 0;
+            margin: 0 15px 0 0;
             user-select: none;
             cursor: pointer;
 
@@ -581,21 +686,26 @@
                         transform: translate(0, 0);
                     }
                 }
+
+                &.on {
+                    figure {
+                        transform: translate(0, 0);
+                    }
+                }
             }
 
             .unit_arrows {
                 position: absolute;
                 bottom: 0;
-                right: 0;
+                right: 6px;
                 display: block;
-                margin: 0 5px 0 0;
 
                 i {
                     display: block;
-                    width: 50px;
-                    height: 50px;
+                    width: 49px;
+                    height: 49px;
                     text-align: center;
-                    line-height: 50px;
+                    line-height: 49px;
                     background: $c-w;
                     color: $c-main;
                     border: 1px solid $c-main;
@@ -608,14 +718,26 @@
                 }
 
                 .left {
-                    border-bottom: 0;
-                    border-bottom: 0;
+                    position: absolute;
+                    bottom: 51px;
+                    right: 0;
+                    border: 0;
+                    border-top: 1px solid $c-main;
+                }
+
+                .right {
+                    position: absolute;
+                    bottom: 1px;
+                    right: 0;
+                    border: 0;
                 }
             }
         }
     }
 }
 
+
+//뉴스모아보기
 .main_news {
     .title {
         display: flex;
