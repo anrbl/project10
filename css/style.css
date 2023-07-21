@@ -344,7 +344,6 @@ body {
 }
 .header .gnb:hover > ul > li .sub {
   height: 340px;
-  transform: translate(-50%, 10px);
 }
 .header .user_area {
   display: flex;
@@ -708,7 +707,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 0 0 -800px;
+  margin: 0 0 0 -850px;
   display: block;
   padding: 45px 0 45px 20px;
 }
@@ -717,7 +716,7 @@ body {
   display: block;
   width: 64px;
   height: 1px;
-  background: #fff;
+  background: #4d4a43;
   transform: rotate(45deg) translate(0, 32px);
   border-radius: 50px;
 }
@@ -726,7 +725,7 @@ body {
   display: block;
   width: 64px;
   height: 1px;
-  background: #fff;
+  background: #4d4a43;
   transform: rotate(-45deg) translate(0, -33px);
   border-radius: 50px;
 }
@@ -735,7 +734,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 0 0 800px;
+  margin: 0 0 0 850px;
   padding: 45px 20px 45px 0;
 }
 .main_visual .arrows .right::before {
@@ -743,7 +742,7 @@ body {
   display: block;
   width: 64px;
   height: 1px;
-  background: #fff;
+  background: #4d4a43;
   transform: rotate(-45deg) translate(0, 33px);
   border-radius: 50px;
 }
@@ -752,7 +751,7 @@ body {
   display: block;
   width: 64px;
   height: 1px;
-  background: #fff;
+  background: #4d4a43;
   transform: rotate(45deg) translate(0, -33px);
   border-radius: 50px;
 }
@@ -897,8 +896,7 @@ body {
   border: none;
   background: #e5e5e5;
   font-size: 12px;
-  font-family: "Pretendard Variable";
-  padding: 2px;
+  padding: 1px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -1180,7 +1178,10 @@ body {
   }
   .main_unit .content .product {
     padding: 0 0;
-    margin: 0 5px;
+    margin: 0 0;
+  }
+  .main_unit .content .product figure {
+    margin: 0;
   }
   .main_unit .content .product figure .img_box img {
     width: 100%;
@@ -1202,8 +1203,9 @@ body {
   .main_unit .content .unit_arrows {
     position: absolute;
     bottom: 0;
-    right: 6px;
+    right: 1px;
     display: block;
+    margin: 0;
   }
   .main_unit .content .unit_arrows i {
     display: block;
